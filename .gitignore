@@ -1,19 +1,14 @@
-# Python cache
 __pycache__/
 *.pyc
 
-# Virtual environments
 venv/
 .env/
 
-# macOS system files
 .DS_Store
 
-# Large model/data files
 *.dat
 *.bin
 *.h5
 *.onnx
 
-# Logs
 *.log
