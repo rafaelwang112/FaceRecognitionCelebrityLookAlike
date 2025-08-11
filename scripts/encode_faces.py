@@ -12,6 +12,8 @@ names = []
 
 my_list = os.listdir(img_path)
 for name in my_list:
+    if os.path.splitext(name)[1] != ".jpg":
+        continue
     curr = cv2.imread(f'{img_path}/{name}')
     import_images.append(curr)
     names.append(name[:name.rfind('.')])
