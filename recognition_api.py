@@ -2,26 +2,19 @@ import cv2
 import numpy as np
 import face_recognition
 import os
+import json
 
-path = 'Images'
-import_images = []
-names = []
-my_list = os.listdir(path)
-for name in my_list:
-    curr = cv2.imread(f'{path}/{name}')
-    import_images.append(curr)
-    names.append(name[:name.rfind('.')])
+path = 'data'
+encodings_path = os.path.join(path, "encodings.npy")
+names_path = os.path.join(path, "names.json")
 
-def compute_enconding(images):
-    encode_list = []
-    for im in images:
-        im = cv2.cvtColor(im, cv2.COLOR_BGR2RGB)
-        encode_img = face_recognition.face_encodings(im)[0]
-        encode_list.append(encode_img)
-    return encode_list
+if not os.path.exists(encodings_path) or not os.path.exists(names_path):
+    print ("Run encode_faces.py first.")
+    exit()
 
-my_encode_list = compute_enconding(import_images)
-print ("Encoding complete")
+my_encode_list = np.load(encodings_path)
+with open (names_path, "r") as file:
+    names = json.load(file)
 
 capture = cv2.VideoCapture(1)
 if not capture.isOpened():
@@ -51,4 +44,7 @@ while True:
             cv2.putText(img, name,(x1+6,y2-6),cv2.FONT_HERSHEY_PLAIN, 1, (0,0,0),3)
             
     cv2.imshow('Webcam', img)
-    cv2.waitKey(1)
+    if (cv2.waitKey(1) & 0xFF == 13):
+        break
+
+capture.release()
