@@ -43,6 +43,14 @@ while True:
     encode_imgs = face_recognition.face_encodings(img_shrink, faces_loc, num_jitters=2, model = "small")
 
     frame_cnt +=1
+    #delete expired tracks
+    if track_list:
+        i = 0
+        while i<len(track_list):
+            if (frame_cnt -track_list[i]['last_seen'])> cached_for:
+                del track_list[i]
+            else:
+                i+=1
 
     #find matches
     for encoded_face, face_loc in zip(encode_imgs, faces_loc):
