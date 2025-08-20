@@ -6,7 +6,7 @@ Real-time face recognition application that detects faces in a webcam, matches t
 Uses:
   1. face_recognition for recognition  
   2. OpenCV for video capture and drawing  
-  3. beautifulsoup + requests for web scraping  
+  3. BeautifulSoup + requests for web scraping  
   4. NumPy for numerical tasks
 
 ## Installation
