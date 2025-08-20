@@ -13,13 +13,17 @@ install dependencies in requirements.txt
 Note: face_recognition depends on dlib, which requires CMake; installing face_recognition without them may fail
 
 ## Usage
+```bash
+# Scrapes images of rappers and saves them in Images/
 python3 scrape_images.py
-Scrapes images of rappers and saves them in Images/
+
+# Generates the files in data/
 python3 encode_faces.py
-Generates the files in data/
+
+#Run the recognition webcam, press Enter to quit
 python3 recognition.py
-Run the recognition webcam, press Enter to quit
 
 ## Improvements for the future
 Better photo choices for some rappers
+
 Reducing overprediction of Lil Pump 
