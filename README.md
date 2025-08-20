@@ -4,13 +4,13 @@ Real-time face recognition application that detects faces in a webcam, matches t
 
 Uses:
   
-  face_recognition for recognition
+  1. face_recognition for recognition
   
-  OpenCV for video capture and drawing
+  2. OpenCV for video capture and drawing
   
-  beautifulsoup + requests for web scraping
+  3. beautifulsoup + requests for web scraping
   
-  NumPy for numerical tasks
+  4. NumPy for numerical tasks
 
 ## Installation
 Clone repo & then install dependencies in requirements.txt
@@ -33,7 +33,7 @@ To run the recognition webcam (press Enter to quit):
 python3 recognition.py
 ```
 
-## Improvements for the future
+## Improvements for the Future
 Better photo choices for some rappers
 
 Reducing overprediction of Lil Pump 
