@@ -3,7 +3,7 @@ Passion project that matches your face to your favorite rappers.
 ## Overview
 Real-time face recognition application that detects faces in a webcam, matches them to a dataset of celebrity images, and tells you who your rapper look-alike is
 
-Uses:
+Uses:<br>
   1. face_recognition for recognition  
   2. OpenCV for video capture and drawing  
   3. beautifulsoup + requests for web scraping  
